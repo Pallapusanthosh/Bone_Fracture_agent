@@ -41,9 +41,8 @@ def generate_pdf(data, filename="report.pdf"):
                 "This assessment is generated using AI-based analysis of fracture patterns and medical knowledge.")
 
     # ⚠️ Severity
-    severity = data.get("severity", {})
-    add_section("Severity Analysis",
-                f"Level: {severity.get('level', '')}<br/>Reason: {severity.get('reason', '')}")
+    severity = data.get("severity", "")
+    add_section("Severity Analysis", str(severity))
 
     # 🩺 Symptoms
     add_list("Symptoms & Observations", data.get("symptoms", []))
